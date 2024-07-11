@@ -7,13 +7,22 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { EventCategoryListComponent } from './features/event-category/event-category-list/event-category-list.component';
 import { AddEventCategoryComponent } from './features/event-category/add-event-category/add-event-category.component';
+import { EditEventCategoryComponent } from './features/event-category/edit-event-category/edit-event-category.component';
+
+import { EditDoggyEventComponent } from './features/doggy-event/edit-doggy-event/edit-doggy-event.component';
+import { DoggyEventListComponent } from './features/doggy-event/doggy-event-list/doggy-event-list.component';
+import { AddDoggyEventComponent } from './features/doggy-event/add-doggy-event/add-doggy-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     EventCategoryListComponent,
-    AddEventCategoryComponent
+    AddEventCategoryComponent,
+    EditEventCategoryComponent,
+    AddDoggyEventComponent,
+    EditDoggyEventComponent,
+    DoggyEventListComponent
   ],
   imports: [
     BrowserModule,

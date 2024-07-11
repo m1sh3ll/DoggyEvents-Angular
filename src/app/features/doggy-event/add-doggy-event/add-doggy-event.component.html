@@ -1,0 +1,59 @@
+<section class="team-circles">
+  <div class="container">
+
+    <p class="centered-subheading">Choose A Dog</p>
+    <div class="team-grid">
+      <div id="w-node-_96c75a29-50aa-0c39-d74f-1bc09883f85e-02920845" class="team-card">
+        <img src="assets/images/milo.jpg" loading="lazy" sizes="(max-width: 479px) 125px, (max-width: 991px) 190px, 270px" srcset="assets/images/milo-p-500.jpg 500w, assets/images/milo-p-800.jpg 800w, assets/images/milo-p-1080.jpg 1080w, assets/images/milo-p-1600.jpg 1600w, assets/images/milo-p-2000.jpg 2000w, assets/images/milo.jpg 2268w" alt="" class="team-member-image" (click)="setDog('Milo', 'dog1')" [ngClass]="{'highlight': highlightedImage === 'dog1'}">
+        <div class="team-member-name">Milo</div>
+      </div>
+      <div id="w-node-_96c75a29-50aa-0c39-d74f-1bc09883f862-02920845" class="team-card">
+        <img src="assets/images/otis.jpg" loading="lazy" sizes="(max-width: 479px) 125px, (max-width: 991px) 190px, 270px" srcset="assets/images/otis-p-500.jpg 500w, assets/images/otis-p-800.jpg 800w, assets/images/otis-p-1080.jpg 1080w, assets/images/otis.jpg 1406w" alt="" class="team-member-image" (click)="setDog('Otis', 'dog2')" [ngClass]="{'highlight': highlightedImage === 'dog2'}">
+        <div class="team-member-name">Otis</div>
+      </div>
+    </div>
+
+    <h1 id="w-node-_96c75a29-50aa-0c39-d74f-1bc09883f866-02920845" class="heading">Record Event</h1>
+    <p class="margin-bottom-24px">Record dog events below.
+    Highlight each category to record your event.
+    Date and time will be saved.</p>
+
+
+    <div class="div-block-3">
+
+      <form #form="ngForm" (ngSubmit)="onFormSubmit()" class="form">
+
+        <div class="mt-3">
+          <label for="title" class="form-label">Dog Name</label>
+          <input type="text" id="title" name="title" class="form-control" [(ngModel)]="model.dogName">
+        </div>
+
+        <div class="mt-3">
+          <label for="publishedDate" class="form-label">Published Date</label>
+          <input type="date" id="publishedDate" name="publishedDate" class="form-control" value="{{model.publishedDate}}"
+                 [ngModel]="model.publishedDate" (ngModelChange)="model.publishedDate = $event">
+        </div>
+
+        <div class="mt-3">
+          <label for="categories" class="form-label">Categories</label>
+          <ng-container *ngIf="categories$ | async as categories">
+            <select class="form-control" [(ngModel)]="model.categories" name="categories" id="categories" multiple>
+              <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+            </select>
+          </ng-container>
+        </div>
+
+        <div class="mt-3">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+
+      </form>
+
+    </div>
+
+
+
+
+
+  </div>
+</section>
