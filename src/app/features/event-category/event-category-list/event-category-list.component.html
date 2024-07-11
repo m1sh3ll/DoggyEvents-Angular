@@ -1,0 +1,33 @@
+<section class="team-circles">
+  <div class="container">
+    <p class="centered-subheading">Event Categories</p>
+
+    <div class="d-flex justify-content-end mt-3">
+      <a [routerLink]="add-event-category" class="btn btn-primary">Add Category</a>
+    </div>
+
+    <ng-container *ngIf="categories$ | async as categories">
+      <table class="table-bordered mt-3 table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>            
+            <!--<th>&nbsp;</th>-->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categories">
+            <td>{{category.id}}</td>
+            <td>{{category.name}}</td>           
+            <td>
+              <!--<a [routerLink]="['event-categories', category.id]" class="btn btn-light">Edit</a>-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </ng-container>
+
+
+  </div>
+</section>

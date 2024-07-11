@@ -1,0 +1,35 @@
+<div class="navbar-logo-left">
+  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+    role="banner" class="navbar-logo-left-container shadow-three w-nav">
+    <div class="container-3">
+      <div class="navbar-wrapper">
+        <a href="#" class="navbar-brand w-nav-brand">
+          <div class="text-block">Doggy Events</div>
+        </a>
+
+        <nav role="navigation" class="nav-menu-wrapper w-nav-menu" [class.open]="isMenuOpen">
+          <ul role="list" class="nav-menu-two w-list-unstyled">
+            <li>
+              <a href="add-doggy-event.html" class="nav-link">Add Event</a>
+            </li>
+            <li>
+              <a routerLink="event-categories" class="nav-link">Categories</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">History</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">Login</a>
+            </li>
+            <li class="mobile-margin-top-10">
+              <a href="#" class="button-primary-2 w-button">Logout</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-button w-nav-button" (click)="toggleMenu()">
+          <div class="icon w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
