@@ -18,10 +18,8 @@ export class AddDoggyEventComponent implements OnInit {
 
   //variables
   model: AddDoggyEvent;
-  categories$?: Observable<EventCategory[]>;
+  eventCategories$?: Observable<EventCategory[]>;
   addDogEventSubscription?: Subscription;
-  imageSelectSubscription?: Subscription;
-  isImageSelectorVisible: boolean = false;
   dogName?: string;
   highlightedImage: string | null;
 
@@ -34,7 +32,7 @@ export class AddDoggyEventComponent implements OnInit {
     this.model = {
       dogName: '',
       publishedDate: new Date(),
-      categories: []
+      eventCategories: []
     };
 
     this.highlightedImage = null;
@@ -42,7 +40,7 @@ export class AddDoggyEventComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.categories$ = this.categoryService.getAllCategories();
+    this.eventCategories$ = this.categoryService.getAllCategories();
   
   }
 
@@ -52,6 +50,17 @@ export class AddDoggyEventComponent implements OnInit {
   }
 
   onFormSubmit(): void {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const hours = String(currentDate.getHours()).padStart(2, '0');
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    
+    const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+    this.model.publishedDate = new Date(formattedDate);
+
     console.log(this.model.dogName);
     this.addDogEventSubscription = this.doggyEventService.createDoggyEvent(this.model).subscribe({
       next: (response) => {

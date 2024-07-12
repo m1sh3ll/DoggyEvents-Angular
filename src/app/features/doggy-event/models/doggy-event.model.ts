@@ -5,5 +5,5 @@ export interface DoggyEvent {
   id: string;
   dogName: string;  
   publishedDate: Date;  
-  categories: EventCategory[];
+  eventCategories: EventCategory[];
 }
