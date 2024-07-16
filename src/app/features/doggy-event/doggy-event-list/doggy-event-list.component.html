@@ -1,2 +1,49 @@
 
 
+<section class="team-circles">
+  <div class="container">
+    <p class="centered-subheading">Event History</p>
+
+    <div class="d-flex justify-content-end mt-3">
+      <a routerLink="add-doggy-event" class="btn btn-primary">Add New Event</a>
+    </div>
+
+    <ng-container *ngIf="doggyEvents$ | async as doggyEvents">
+
+      <div class="table">
+        <div class="row header blue">
+          <div class="cell">
+            Date
+          </div>
+          <div class="cell">
+            Dog Name
+          </div>
+          <div class="cell">
+            Event
+          </div>
+         
+
+        </div>
+
+        <div class="row" *ngFor="let doggyEvent of doggyEvents">
+          <div class="cell">
+            {{ doggyEvent.publishedDate | date: 'M/d/yy, h:mm a z' }}
+          </div>
+          <div class="cell">
+            {{doggyEvent.dogName}}
+          </div>
+          <div class="cell">
+            <span *ngFor="let category of doggyEvent.eventCategories">
+              <span class="badge bg-secondary me-2">{{category.name}}</span>
+            </span>
+          </div>
+          <!--<div class="cell">
+            <a [routerLink]="['edit-doggy-category', category.id]" class="btn btn-light">Edit</a>
+          </div>-->
+        </div>
+      </div>
+    </ng-container>
+
+
+  </div>
+</section>

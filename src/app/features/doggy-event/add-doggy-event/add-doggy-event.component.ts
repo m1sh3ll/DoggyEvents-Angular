@@ -6,7 +6,7 @@ import { AddDoggyEvent } from '../models/add-doggy-event.model';
 import { EventCategory } from '../../event-category/models/event-category.model';
 import { DoggyEventService } from '../services/doggy-event.service';
 import { EventCategoryService } from '../../event-category/services/event-category.service';
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-doggy-event',
