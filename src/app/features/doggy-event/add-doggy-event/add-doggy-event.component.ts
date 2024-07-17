@@ -41,7 +41,7 @@ export class AddDoggyEventComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventCategories$ = this.categoryService.getAllCategories();
-  
+
   }
 
   setDog(newDogName: string, imageId: string): void {
@@ -56,10 +56,11 @@ export class AddDoggyEventComponent implements OnInit {
     const day = String(currentDate.getDate()).padStart(2, '0');
     const hours = String(currentDate.getHours()).padStart(2, '0');
     const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-    
+
     const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
 
     this.model.publishedDate = new Date(formattedDate);
+    console.log(this.model);
 
     console.log(this.model.dogName);
     this.addDogEventSubscription = this.doggyEventService.createDoggyEvent(this.model).subscribe({

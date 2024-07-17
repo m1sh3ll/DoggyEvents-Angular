@@ -12,6 +12,7 @@ import { EditEventCategoryComponent } from './features/event-category/edit-event
 import { EditDoggyEventComponent } from './features/doggy-event/edit-doggy-event/edit-doggy-event.component';
 import { DoggyEventListComponent } from './features/doggy-event/doggy-event-list/doggy-event-list.component';
 import { AddDoggyEventComponent } from './features/doggy-event/add-doggy-event/add-doggy-event.component';
+import { TimezonePipe } from './timezone.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddDoggyEventComponent } from './features/doggy-event/add-doggy-event/a
     EditEventCategoryComponent,
     AddDoggyEventComponent,
     EditDoggyEventComponent,
-    DoggyEventListComponent
+    DoggyEventListComponent,
+    TimezonePipe
   ],
   imports: [
     BrowserModule,
