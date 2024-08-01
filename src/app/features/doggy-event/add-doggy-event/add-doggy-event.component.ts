@@ -6,7 +6,7 @@ import { AddDoggyEvent } from '../models/add-doggy-event.model';
 import { EventCategory } from '../../event-category/models/event-category.model';
 import { DoggyEventService } from '../services/doggy-event.service';
 import { EventCategoryService } from '../../event-category/services/event-category.service';
-import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-add-doggy-event',
@@ -49,20 +49,18 @@ export class AddDoggyEventComponent implements OnInit {
     this.highlightedImage = imageId;
   }
 
+  
+
+
+
+  
   onFormSubmit(): void {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-    const day = String(currentDate.getDate()).padStart(2, '0');
-    const hours = String(currentDate.getHours()).padStart(2, '0');
-    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
 
-    const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+      
 
-    this.model.publishedDate = new Date(formattedDate);
-    console.log(this.model);
+    this.model.publishedDate = new Date();
 
-    console.log(this.model.dogName);
+    
     this.addDogEventSubscription = this.doggyEventService.createDoggyEvent(this.model).subscribe({
       next: (response) => {
         this.router.navigateByUrl('doggy-events');

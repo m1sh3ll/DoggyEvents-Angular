@@ -3,6 +3,15 @@
     <p class="centered-subheading">Event History</p>
 
     <div class="d-flex justify-content-end mt-3">
+
+      <!--<div class="d-flex">
+        <input type="datetime-local" class="form-control" #queryText>
+        <button type="button" class="btn btn-warning ms-3" (click)="onSearch(queryText.value)">Search</button>
+      </div>-->
+
+
+
+
       <a routerLink="add-doggy-event" class="btn btn-primary">Add New Event</a>
     </div>
 
@@ -13,6 +22,7 @@
           <div class="cell">Dog Name</div>
           <div class="cell">Event</div>
         </div>
+
 
         <div class="row" *ngFor="let doggyEvent of doggyEvents">
           <div class="cell">
