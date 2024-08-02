@@ -22,8 +22,6 @@
           <div class="cell">Dog Name</div>
           <div class="cell">Event</div>
         </div>
-
-
         <div class="row" *ngFor="let doggyEvent of doggyEvents">
           <div class="cell">
             {{ doggyEvent.publishedDate | timezone : "America/New_York" }}
