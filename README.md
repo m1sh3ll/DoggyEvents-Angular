@@ -29,7 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Electron Cross Platform App for Windows/Linux
 
-This app was pacakged for Windows/Linux desktops also and here are the download links:
+This app was packaged for Windows/Linux desktops also and here are the download links:
 
 https://www.ftpzero.com/electron/doggy-events-linux.rar
 https://www.ftpzero.com/electron/doggy-events-windows.rar
