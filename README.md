@@ -32,5 +32,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 This app was packaged for Windows/Linux desktops also and here are the download links:
 
-https://www.ftpzero.com/electron/doggy-events-linux.rar
+https://www.ftpzero.com/electron/doggy-events-linux.rar<br>
 https://www.ftpzero.com/electron/doggy-events-windows.rar
