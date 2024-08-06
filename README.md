@@ -1,4 +1,5 @@
 # DoggyEvents
+This project was created to track our dog activities.<br>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
